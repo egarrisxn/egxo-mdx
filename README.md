@@ -1,0 +1,1 @@
+UPDATE "plugin:mdx/recommended" IN ESLINT
