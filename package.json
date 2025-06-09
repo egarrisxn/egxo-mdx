@@ -3,6 +3,17 @@
   "version": "1.0.0",
   "description": "EGXO MDX 2025!",
   "private": true,
+  "keywords": [
+    "javascript",
+    "nextjs",
+    "react",
+    "tailwindcss",
+    "mdx",
+    "shadcnui",
+    "vercel",
+    "motion",
+    "motion-primitives"
+  ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prebuild": "pnpm run lint",
@@ -20,6 +31,8 @@
     "@next/mdx": "^15.3.3",
     "@tailwindcss/typography": "^0.5.16",
     "@types/mdx": "^2.0.13",
+    "@vercel/analytics": "^1.5.0",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.513.0",
     "motion": "^12.16.0",

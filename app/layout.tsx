@@ -1,28 +1,12 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { ViewTransitions } from 'next-view-transitions'
-import { ThemeProvider } from 'next-themes'
-import { Header } from './header'
-import { Footer } from './footer'
+import { Analytics } from '@vercel/analytics/react'
+import { ThemeProvider } from '@/components/theme-provider'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
+import { SITE_TITLE, SITE_DESC, SITE_URL, SITE_HANDLE } from '@/lib/constants'
 import './globals.css'
-
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  themeColor: '#ffffff',
-}
-
-export const metadata: Metadata = {
-  metadataBase: new URL('https://egxo-mdx.vercel.app/'),
-  alternates: {
-    canonical: '/',
-  },
-  title: {
-    default: 'EGXO | MDX',
-    template: '%s | egxo',
-  },
-  description: 'EGXO MDX 2025!',
-}
 
 const geist = Geist({
   variable: '--font-geist',
@@ -34,6 +18,56 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: '/',
+  },
+  title: {
+    default: SITE_TITLE,
+    template: '%s | egxo',
+  },
+  description: SITE_DESC,
+  applicationName: SITE_TITLE,
+  referrer: 'origin-when-cross-origin',
+  keywords: [
+    'typescript',
+    'javascript',
+    'nextjs',
+    'react',
+    'tailwindcss',
+    'mdx',
+    'shadcnui',
+    'vercel',
+    'motion',
+    'motion-primitives',
+  ],
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    title: SITE_TITLE,
+    description: SITE_DESC,
+    url: SITE_URL,
+    siteName: SITE_TITLE,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_TITLE,
+    description: SITE_DESC,
+    creator: SITE_HANDLE,
+    site: SITE_HANDLE,
+  },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' },
+  ],
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,22 +77,21 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
+          className={`${geist.variable} ${geistMono.variable} flex min-h-screen w-full flex-col font-sans tracking-tight antialiased`}
         >
           <ThemeProvider
-            enableSystem={true}
             attribute="class"
-            storageKey="theme"
             defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
           >
-            <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
-              <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
-                <Header />
-                {children}
-                <Footer />
-              </div>
-            </div>
+            <main className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
+              <Header />
+              {children}
+              <Footer />
+            </main>
           </ThemeProvider>
+          <Analytics />
         </body>
       </html>
     </ViewTransitions>
