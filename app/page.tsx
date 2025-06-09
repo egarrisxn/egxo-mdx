@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import * as motion from 'motion/react-client'
 import { Spotlight } from '@/components/ui/spotlight'
 import { AnimatedBackground } from '@/components/ui/animated-background'
@@ -11,25 +11,11 @@ import {
   EMAIL,
   SOCIAL_LINKS,
 } from '@/lib/data'
-
-const VARIANTS_CONTAINER = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-}
-
-const VARIANTS_SECTION = {
-  hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
-  visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
-}
-
-const TRANSITION_SECTION = {
-  duration: 0.3,
-}
+import {
+  VARIANTS_CONTAINER,
+  VARIANTS_SECTION,
+  TRANSITION_SECTION,
+} from '@/lib/constants'
 
 export default function Home() {
   return (
@@ -144,6 +130,15 @@ export default function Home() {
               </Link>
             ))}
           </AnimatedBackground>
+        </div>
+        <div className="pt-6">
+          <Link
+            href="/blog"
+            className="group text-foreground relative inline-block"
+          >
+            See More
+            <span className="bg-foreground absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 transition-all duration-200 group-hover:max-w-full"></span>
+          </Link>
         </div>
       </motion.section>
 

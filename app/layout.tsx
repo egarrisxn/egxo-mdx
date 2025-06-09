@@ -77,7 +77,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`${geist.variable} ${geistMono.variable} flex min-h-screen w-full flex-col font-sans tracking-tight antialiased`}
+          className={`${geist.variable} ${geistMono.variable} font-sans tracking-tight antialiased`}
         >
           <ThemeProvider
             attribute="class"
@@ -85,11 +85,11 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <main className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
+            <div className="relative mx-auto grid min-h-[100dvh] w-full max-w-screen-sm grid-rows-[auto_1fr_auto] pt-20">
               <Header />
-              {children}
+              <main className="grid px-4">{children}</main>
               <Footer />
-            </main>
+            </div>
           </ThemeProvider>
           <Analytics />
         </body>

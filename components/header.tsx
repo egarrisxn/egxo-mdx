@@ -4,7 +4,17 @@ import { TextEffect } from '@/components/ui/text-effect'
 
 export function Header() {
   return (
-    <header className="mb-8 flex items-center justify-between">
+    <header className="mb-8 flex items-center justify-start gap-2">
+      <section>
+        <Image
+          src="/face.svg"
+          alt="my face"
+          width="50"
+          height="50"
+          quality={100}
+          priority
+        />
+      </section>
       <section>
         <Link
           href="/"
@@ -21,16 +31,6 @@ export function Header() {
         >
           Developer // Designer
         </TextEffect>
-      </section>
-      <section>
-        <Image
-          src="/face.svg"
-          alt="my face"
-          width="50"
-          height="50"
-          quality={100}
-          priority
-        />
       </section>
     </header>
   )
