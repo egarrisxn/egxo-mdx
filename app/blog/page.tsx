@@ -46,6 +46,9 @@ export default function BlogPage() {
             ))}
           </AnimatedBackground>
         </div>
+        <div className="pt-12">
+          <Link href="/projects">Projects &#10097;</Link>
+        </div>
       </motion.section>
     </motion.main>
   )
