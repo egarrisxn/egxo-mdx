@@ -48,10 +48,10 @@ export default function ProjectsPage() {
                 </div>
               ))}
             </div>
-            <div className="pt-12">
-              <Link href="/blog">Blog &#10097;</Link>
-            </div>
           </motion.section>
+          <div className="pt-12">
+            <Link href="/blog">Blog &#10097;</Link>
+          </div>
         </motion.main>
       </div>
     </>
