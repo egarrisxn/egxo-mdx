@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { XIcon } from 'lucide-react'
 import {
   MorphingDialog,
@@ -10,19 +9,11 @@ import {
 
 type ProjectVideoProps = {
   video: string
-  thumbnail: string
 }
 
-export function ProjectVideo({ video, thumbnail }: ProjectVideoProps) {
+export function ProjectVideo({ video }: ProjectVideoProps) {
   return (
     <>
-      <Image
-        src={thumbnail}
-        alt="Project Image"
-        width={960}
-        height={540}
-        className="aspect-video w-full rounded-xl lg:hidden"
-      />
       <MorphingDialog
         transition={{
           type: 'spring',
@@ -36,7 +27,7 @@ export function ProjectVideo({ video, thumbnail }: ProjectVideoProps) {
             autoPlay
             loop
             muted
-            className="hidden aspect-video w-full cursor-zoom-in rounded-xl lg:block"
+            className="aspect-video w-full cursor-zoom-in rounded-xl"
           />
         </MorphingDialogTrigger>
         <MorphingDialogContainer>

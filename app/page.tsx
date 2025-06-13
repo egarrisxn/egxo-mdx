@@ -4,6 +4,7 @@ import { Spotlight } from '@/components/ui/spotlight'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { MagneticSocialLink } from '@/components/magnetic-social-link'
 import { ProjectVideo } from '@/components/project-video'
+import { ProjectImage } from '@/components/project-image'
 import { SeeMore } from '@/components/see-more'
 import {
   PROJECTS,
@@ -47,11 +48,16 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {PROJECTS.map((project) => (
             <div key={project.name} className="space-y-2">
-              <div className="bg-accent-foreground/40 ring-muted/50 relative rounded-2xl p-1 ring-1 ring-inset">
-                <ProjectVideo
-                  video={project.video}
-                  thumbnail={project.thumbnail}
-                />
+              <div className="bg-accent-foreground/40 ring-muted/50 relative rounded-2xl p-0.5 ring-1 ring-inset">
+                <div className="hidden lg:block">
+                  <ProjectVideo video={project.video} />
+                </div>
+                <div className="lg:hidden">
+                  <ProjectImage
+                    href={project.link}
+                    thumbnail={project.thumbnail}
+                  />
+                </div>
               </div>
               <div className="px-1">
                 <a
