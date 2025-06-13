@@ -3,6 +3,7 @@ type Project = {
   description: string
   link: string
   video: string
+  thumbnail: string
   id: string
 }
 
@@ -34,6 +35,7 @@ export const PROJECTS: Project[] = [
     link: 'https://quikres.vercel.app/',
     video:
       'https://zknos4ss5a.ufs.sh/f/Bz7PmjuYTc3C1JZ1rClz0jpPentqV9SklJGwFOZXzmQsR43K',
+    thumbnail: '/quikres.png',
     id: 'project1',
   },
   {
@@ -42,6 +44,7 @@ export const PROJECTS: Project[] = [
     link: 'https://manylinks.vercel.app/',
     video:
       'https://zknos4ss5a.ufs.sh/f/Bz7PmjuYTc3C9vJM8SMYEGw31MjJTsHuRtarCDNYPBclo9dh',
+    thumbnail: '/manylinks.png',
     id: 'project2',
   },
 ]

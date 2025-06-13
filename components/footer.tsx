@@ -3,7 +3,7 @@ import { ThemeSwitch } from '@/components/theme-switch'
 
 export function Footer() {
   return (
-    <footer className="border-border mt-24 border-t py-4">
+    <footer className="border-border mt-24 border-t p-4">
       <div className="flex items-center justify-between">
         <section>
           <a href="https://github.com/egarrisxn" target="_blank">

@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Link } from 'next-view-transitions'
 import { TextMorph } from '@/components/ui/text-morph'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
+import { GoBack } from '@/components/go-back'
 
 function CopyButton() {
   const [text, setText] = useState('Copy')
@@ -44,15 +44,15 @@ export default function LayoutBlogPost({
           bounce: 0,
         }}
       />
-      <div className="absolute top-6">
-        <Link href="/">&#10096; Back</Link>
+      <div className="absolute top-8">
+        <GoBack href="/" text="back " />
       </div>
       <div className="absolute top-24 right-4">
         <CopyButton />
       </div>
-      <main className="prose prose-gray prose-h4:prose-base dark:prose-invert prose-h1:text-xl prose-h1:font-medium prose-h2:mt-12 prose-h2:scroll-m-20 prose-h2:text-lg prose-h2:font-medium prose-h3:text-base prose-h3:font-medium prose-h4:font-medium prose-h5:text-base prose-h5:font-medium prose-h6:text-base prose-h6:font-medium prose-strong:font-medium mt-16 pb-20">
+      <article className="prose prose-gray prose-h4:prose-base dark:prose-invert prose-h1:text-xl prose-h1:font-medium prose-h2:mt-12 prose-h2:scroll-m-20 prose-h2:text-lg prose-h2:font-medium prose-h3:text-base prose-h3:font-medium prose-h4:font-medium prose-h5:text-base prose-h5:font-medium prose-h6:text-base prose-h6:font-medium prose-strong:font-medium mt-16 grid max-w-screen pb-20">
         {children}
-      </main>
+      </article>
     </>
   )
 }

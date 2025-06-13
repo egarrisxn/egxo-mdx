@@ -1,6 +1,7 @@
-import { Link } from 'next-view-transitions'
 import * as motion from 'motion/react-client'
-import { ProjectVideo } from '@/components/project-video'
+import { ProjectImage } from '@/components/project-image'
+import { GoBack } from '@/components/go-back'
+import { SeeMore } from '@/components/see-more'
 import { PROJECTS } from '@/lib/data'
 import {
   VARIANTS_CONTAINER,
@@ -11,10 +12,10 @@ import {
 export default function ProjectsPage() {
   return (
     <>
-      <div className="absolute top-6">
-        <Link href="/">&#10096; Back</Link>
+      <div className="absolute top-8">
+        <GoBack href="/" text="back " />
       </div>
-      <div className="mt-22">
+      <div className="mt-20">
         <motion.main
           className="space-y-24"
           variants={VARIANTS_CONTAINER}
@@ -25,12 +26,15 @@ export default function ProjectsPage() {
             variants={VARIANTS_SECTION}
             transition={TRANSITION_SECTION}
           >
-            <h3 className="mb-12 text-lg font-medium">Selected Projects</h3>
+            <h3 className="mb-12 text-lg font-medium">Select Projects</h3>
             <div className="grid grid-cols-1 gap-16">
               {PROJECTS.map((project) => (
-                <div key={project.name} className="space-y-2x p-2">
+                <div key={project.name} className="space-y-2">
                   <div className="bg-accent-foreground/40 ring-muted/50 relative rounded-2xl p-1 ring-1 ring-inset">
-                    <ProjectVideo src={project.video} />
+                    <ProjectImage
+                      href={project.link}
+                      thumbnail={project.thumbnail}
+                    />
                   </div>
                   <div className="px-1">
                     <a
@@ -50,7 +54,7 @@ export default function ProjectsPage() {
             </div>
           </motion.section>
           <div className="pt-12">
-            <Link href="/blog">Blog &#10097;</Link>
+            <SeeMore href="/posts" text="Blog " />
           </div>
         </motion.main>
       </div>

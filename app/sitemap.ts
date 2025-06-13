@@ -8,7 +8,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: `${SITE_URL}/fun`,
+      url: `${SITE_URL}/posts`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${SITE_URL}/projects`,
       lastModified: new Date(),
     },
     {
@@ -16,9 +20,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: `${SITE_URL}/blog`,
+      url: `${SITE_URL}/fun`,
       lastModified: new Date(),
     },
+    {
+      url: `${SITE_URL}/contact`,
+      lastModified: new Date(),
+    },
+
     // {
     //   url: `${SITE_URL}/blog/...`,
     //   lastModified: new Date(),
