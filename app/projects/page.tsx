@@ -29,8 +29,8 @@ export default function ProjectsPage() {
             <h3 className="mb-12 text-lg font-medium">Select Projects</h3>
             <div className="grid grid-cols-1 gap-16">
               {PROJECTS.map((project) => (
-                <div key={project.name} className="space-y-2">
-                  <div className="bg-accent-foreground/40 ring-muted/50 relative rounded-2xl p-1 ring-1 ring-inset">
+                <div key={project.name} className="space-y-3">
+                  <div className="bg-accent-foreground/40 ring-muted/50 relative rounded-2xl p-0.5 shadow-md ring-1 ring-inset">
                     <ProjectImage
                       href={project.link}
                       thumbnail={project.thumbnail}

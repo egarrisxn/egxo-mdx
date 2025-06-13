@@ -27,11 +27,11 @@ export function ProjectVideo({ video }: ProjectVideoProps) {
             autoPlay
             loop
             muted
-            className="aspect-video w-full cursor-zoom-in rounded-xl"
+            className="hidden aspect-video w-full rounded-xl lg:block lg:cursor-zoom-in"
           />
         </MorphingDialogTrigger>
         <MorphingDialogContainer>
-          <MorphingDialogContent className="bg-background ring-accent/50 relative aspect-video rounded-2xl p-1 ring-1 ring-inset">
+          <MorphingDialogContent className="bg-background ring-accent/50 relative hidden aspect-video rounded-2xl p-1 ring-1 ring-inset lg:block">
             <video
               src={video}
               autoPlay
@@ -41,7 +41,7 @@ export function ProjectVideo({ video }: ProjectVideoProps) {
             />
           </MorphingDialogContent>
           <MorphingDialogClose
-            className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
+            className="fixed top-6 right-6 hidden size-fit rounded-full bg-white p-1 lg:block"
             variants={{
               initial: { opacity: 0 },
               animate: {

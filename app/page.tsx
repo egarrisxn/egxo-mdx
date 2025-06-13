@@ -1,6 +1,5 @@
 import { Link } from 'next-view-transitions'
 import * as motion from 'motion/react-client'
-import { Spotlight } from '@/components/ui/spotlight'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { MagneticSocialLink } from '@/components/magnetic-social-link'
 import { ProjectVideo } from '@/components/project-video'
@@ -48,7 +47,7 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {PROJECTS.map((project) => (
             <div key={project.name} className="space-y-2">
-              <div className="bg-accent-foreground/40 ring-muted/50 relative rounded-2xl p-0.5 ring-1 ring-inset">
+              <div className="bg-accent-foreground/40 ring-muted/50 relative rounded-2xl p-0.5 shadow-md ring-1 ring-inset">
                 <div className="hidden lg:block">
                   <ProjectVideo video={project.video} />
                 </div>
@@ -83,20 +82,16 @@ export default function Home() {
         transition={TRANSITION_SECTION}
       >
         <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
-        <div className="flex flex-col space-y-2">
+        <div className="flex flex-col space-y-3">
           {WORK_EXPERIENCE.map((job) => (
             <a
-              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
+              className="relative overflow-hidden rounded-2xl p-0.5"
               href={job.link}
               target="_blank"
               rel="noopener noreferrer"
               key={job.id}
             >
-              <Spotlight
-                className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
-                size={64}
-              />
-              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+              <div className="relative size-full rounded-2xl bg-white py-2 dark:bg-zinc-950">
                 <div className="relative flex w-full flex-row justify-between gap-x-6 sm:gap-0">
                   <div>
                     <h4 className="text-start text-zinc-900 dark:text-zinc-100">

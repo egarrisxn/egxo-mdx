@@ -12,7 +12,9 @@ export function SeeMore({ href, text }: SeeMoreProps) {
       href={href}
       className="group relative flex flex-row items-center gap-1"
     >
-      <p className="text-foreground/90 group-hover:text-foreground">{text}</p>
+      <p className="text-foreground/90 group-hover:text-foreground font-medium">
+        {text}
+      </p>
       <ArrowRight
         width={16}
         height={16}
