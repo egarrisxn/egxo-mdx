@@ -76,6 +76,9 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
+        <head>
+          <meta name="apple-mobile-web-app-title" content={SITE_TITLE} />
+        </head>
         <body
           className={`${geist.variable} ${geistMono.variable} font-sans tracking-tight antialiased`}
         >
@@ -83,7 +86,7 @@ export default function RootLayout({
             attribute="class"
             defaultTheme="system"
             enableSystem
-            disableTransitionOnChange
+            // disableTransitionOnChange
           >
             <div className="relative mx-auto grid min-h-[100dvh] w-full max-w-screen-sm grid-rows-[auto_1fr_auto] pt-20">
               <Header />
